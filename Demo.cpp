@@ -22,6 +22,10 @@ int main() {
   cout << a << endl;           // Prints "2[km]".
   cout << (-a) << endl;    // Prints "-2[km]"
   cout << (3*a) << endl;    // Prints "6[km]"
+  cout << (a*3) << endl;
+  cout << (++a) << endl;
+  cout << (a--) << endl;
+
 
   NumberWithUnits b{300, "m"};  // 300 meters
   cout << (a+b) << endl;   // Prints "2.3[km]". Note: units are determined by first number (a).

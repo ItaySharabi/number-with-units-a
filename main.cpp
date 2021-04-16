@@ -15,11 +15,5 @@ int main() {
 
     cout << a+b << endl;
 
-    cout << a*b << endl;
-
-    cout << b*c << endl;
-
-    cout << c*c << endl;
-
 	return 0;
 }
