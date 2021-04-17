@@ -3,13 +3,13 @@
 namespace ariel{ 
     
     NumberWithUnits::NumberWithUnits() {
-        cout << "constructor1()" << endl;
+        // cout << "constructor1()" << endl;
         number = 0;
         unit_type = "Default";
     }
     
     NumberWithUnits::NumberWithUnits(int num, string u_type) {
-        cout << "constructor2()" << endl;
+        // cout << "constructor2()" << endl;
         number = num;
         unit_type = u_type;
     }
@@ -137,6 +137,7 @@ namespace ariel{
 
     istream& operator>> (istream& cin, NumberWithUnits num) {
         cout << "NumberWithUnits input:...." << endl;
+        cin >> num.number >> num.unit_type;
         return cin;
     }  
 
