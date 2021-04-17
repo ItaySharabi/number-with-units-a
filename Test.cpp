@@ -66,8 +66,21 @@ TEST_CASE("TEST 1 -- Check Boolean operators") {
 }
 
 
-TEST_CASE("TEST 2") {
-    cout << "Test 2 Hello!" << endl;
+TEST_CASE("TEST 2 -- Binary and Unary Operators") {
+
+    NumberWithUnits a{10, "kg"};
+    NumberWithUnits b{10, "kg"};
+    NumberWithUnits c{20, "kg"};
+    NumberWithUnits d{0, "kg"};
+    NumberWithUnits e{0, "g"};
+
+    CHECK((a+b) == c);
+    CHECK((a-b) == d);
+    CHECK((a-b) == e);
+
+
+
+
 }
 
 TEST_CASE("TEST 3") {
