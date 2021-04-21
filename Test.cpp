@@ -7,7 +7,7 @@ using namespace std;
 using namespace ariel;
 
 
-TEST_CASE("TEST 1 -- Check Boolean operators") {
+TEST_CASE("TEST 1 -- Boolean operators") {
 
     /*---------CHECK BOOLEAN OPERATORS-------*/
     //           Grams and Kilograms         //
@@ -57,12 +57,6 @@ TEST_CASE("TEST 1 -- Check Boolean operators") {
     cout << a << endl;
 
     cout << b << endl;
-
-
-    cout << "Test 1 Finished" << endl;
-
-    
-
 }
 
 
@@ -78,11 +72,26 @@ TEST_CASE("TEST 2 -- Binary and Unary Operators") {
     CHECK((a-b) == d);
     CHECK((a-b) == e);
 
-
-
-
+    CHECK(((a += a) += a) == (c += a));
 }
 
-TEST_CASE("TEST 3") {
-    cout << "Test 3 Hello!" << endl;
+TEST_CASE("TEST 3 - I/O Stream operators") {
+    
+    istringstream check1("10[kg]");
+    istringstream check2("330[g]");
+
+    NumberWithUnits a, b;
+    
+    check1 >> a;
+    check2 >> b;
+
+
+    cout << a << endl; // should print 10[kg]
+    cout << b << endl; // shhould print 330[g]
+
+    CHECK(a == NumberWithUnits(10, "kg"));
+    CHECK(b == NumberWithUnits(330, "g"));
+    bool c;
+    CHECK_NOTHROW(c = (a+b == NumberWithUnits(a.getNumber() + b.getNumber(),a.getUnitType())));
+    
 }
